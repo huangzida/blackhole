@@ -1,26 +1,26 @@
 {
-  "name": "@bg-effects/star-trails-gl",
-  "version": "1.0.0",
+  "name": "@bg-effects/blackhole",
+  "version": "1.0.2",
   "type": "module",
   "packageManager": "pnpm@10.25.0",
-  "description": "Star Trails GL Effect - A high-performance star trails background effect built with OGL and Vue.",
+  "description": "Blackhole GL Effect - A high-performance blackhole background effect built with OGL and Vue.",
   "author": "huangzida",
   "license": "MIT",
   "keywords": [
-    "star-trails",
+    "blackhole",
     "webgl",
     "ogl",
     "vue",
     "background-effect",
     "animation"
   ],
-  "homepage": "https://github.com/huangzida/star-trails-gl#readme",
+  "homepage": "https://github.com/huangzida/blackhole#readme",
   "bugs": {
-    "url": "https://github.com/huangzida/star-trails-gl/issues"
+    "url": "https://github.com/huangzida/blackhole/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huangzida/star-trails-gl.git"
+    "url": "git+https://github.com/huangzida/blackhole.git"
   },
   "sideEffects": [
     "**/*.css"

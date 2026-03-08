@@ -1,24 +1,24 @@
-# @bg-effects/fireworks
+# @bg-effects/blackhole
 
 [English](./README.md) | [简体中文](./README_CN.md)
 
-基于 OGL 和 Vue 构建的高性能烟花背景特效。
+基于 OGL 和 Vue 构建的高性能黑洞背景特效。
 
-[在线演示](https://huangzida.github.io/fireworks/)
+[在线演示](https://huangzida.github.io/blackhole/)
 
 ---
 
 ### 特性
 
 - 🚀 **高性能**: 基于 OGL (轻量级 WebGL 库) 构建，运行流畅。
-- 🎨 **高度可定制**: 提供多种形状（心形、星形、蝴蝶等）、发射模式和颜色选项。
+- 🎨 **高度可定制**: 可调节质量、速度、颜色、引力透镜强度、吸积盘属性及星空背景。
 - 🛠️ **调试模式**: 内置可视化调试面板，方便实时调整效果。
 - 📦 **开箱即用**: 作为 Vue 组件，简单配置即可使用。
 
 ### 安装
 
 ```bash
-pnpm add @bg-effects/fireworks ogl
+pnpm add @bg-effects/blackhole ogl
 ```
 
 > **注意**: `ogl` 是 peer dependency，需要手动安装。
@@ -27,16 +27,18 @@ pnpm add @bg-effects/fireworks ogl
 
 ```vue
 <script setup>
-import { Fireworks } from '@bg-effects/fireworks'
-import '@bg-effects/fireworks/dist/index.css'
+import { Blackhole } from '@bg-effects/blackhole'
+import '@bg-effects/blackhole/dist/index.css'
 </script>
 
 <template>
   <div style="width: 100vw; height: 100vh; background: #000;">
-    <Fireworks 
-      :firework-count="50"
-      shape="heart"
-      color-mode="multi"
+    <Blackhole 
+      :mass="1.2"
+      :speed="1.0"
+      color="#ff6600"
+      :position-x="0.5"
+      :position-y="0.5"
     />
   </div>
 </template>
@@ -46,21 +48,23 @@ import '@bg-effects/fireworks/dist/index.css'
 
 | 属性名 | 类型 | 默认值 | 说明 |
 | :--- | :--- | :--- | :--- |
-| `firework-count` | `number` | `30` | 烟花数量 |
+| `mass` | `number` | `1.0` | 黑洞质量（影响大小和引力效果） |
 | `speed` | `number` | `1.0` | 动画速度 |
-| `size` | `number` | `2.0` | 烟花粒子大小 |
-| `shape` | `string` | `'normal'` | 烟花形状（见下文） |
-| `launch-mode` | `string` | `'random'` | 发射模式（见下文） |
-| `color-mode` | `string` | `'multi'` | 颜色模式 (`'single'` 或 `'multi'`) |
-| `color` | `string` | `'#ff0000'` | 当颜色模式为 `'single'` 时的颜色 |
+| `color` | `string` | `'#ff6600'` | 吸积盘主颜色 |
+| `positionX` | `number` | `0.5` | 水平位置 (0.0 到 1.0) |
+| `positionY` | `number` | `0.5` | 垂直位置 (0.0 到 1.0) |
+| `lensingStrength` | `number` | `0.8` | 引力透镜效应强度 |
+| `diskRadiusScale` | `number` | `1.0` | 吸积盘半径缩放 |
+| `diskWidth` | `number` | `1.0` | 吸积盘宽度缩放 |
+| `diskIntensity` | `number` | `2.0` | 吸积盘亮度强度 |
+| `diskTilt` | `number` | `3.0` | 吸积盘倾斜角度 |
+| `haloIntensity` | `number` | `0.5` | 光晕亮度强度 |
+| `starDensity` | `number` | `1.0` | 背景星空密度 |
+| `twinkleStrength` | `number` | `1.0` | 星星闪烁强度 |
+| `noiseStrength` | `number` | `0.35` | 吸积盘噪声细节强度 |
 | `debug` | `boolean` | `false` | 是否开启调试面板 |
 | `lang` | `'zh-CN' \| 'en'` | `'zh-CN'` | 界面语言 |
-
-#### 支持的形状 (`shape`)
-`normal`, `circular`, `heart`, `star`, `butterfly`, `spiral`, `ring`, `doubleRing`, `atom`, `trefoil`, `clover`, `cross`, `saturn`, `hexagram`, `astroid`, `gear`, `fermat`, `folium`, `random`
-
-#### 发射模式 (`launchMode`)
-`random`, `burst`, `wave`, `tide`, `simultaneous`, `pendulum`
+| `maxFps` | `number` | `60` | 最大帧率限制 |
 
 ### 本地开发
 

@@ -1,0 +1,25 @@
+{
+  "tabs": {
+    "basic": "基础",
+    "disk": "吸积盘",
+    "lens": "透镜",
+    "stars": "星空"
+  },
+  "labels": {
+    "color": "吸积盘颜色",
+    "speed": "速度",
+    "mass": "质量",
+    "positionX": "位置 X",
+    "positionY": "位置 Y",
+    "lensingStrength": "引力透镜",
+    "diskRadiusScale": "吸积盘大小",
+    "diskWidth": "吸积盘宽度",
+    "diskIntensity": "吸积盘强度",
+    "diskTilt": "吸积盘倾角",
+    "haloIntensity": "光晕强度",
+    "starDensity": "星点密度",
+    "twinkleStrength": "闪烁强度",
+    "noiseStrength": "湍流细节",
+    "maxFps": "最大帧率"
+  }
+}

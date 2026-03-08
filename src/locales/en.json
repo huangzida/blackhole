@@ -1,0 +1,25 @@
+{
+  "tabs": {
+    "basic": "Basic",
+    "disk": "Accretion",
+    "lens": "Lensing",
+    "stars": "Stars"
+  },
+  "labels": {
+    "color": "Accretion Color",
+    "speed": "Speed",
+    "mass": "Mass",
+    "positionX": "Position X",
+    "positionY": "Position Y",
+    "lensingStrength": "Lensing",
+    "diskRadiusScale": "Disk Size",
+    "diskWidth": "Disk Width",
+    "diskIntensity": "Disk Intensity",
+    "diskTilt": "Disk Tilt",
+    "haloIntensity": "Halo Intensity",
+    "starDensity": "Star Density",
+    "twinkleStrength": "Twinkle",
+    "noiseStrength": "Turbulence",
+    "maxFps": "Max FPS"
+  }
+}

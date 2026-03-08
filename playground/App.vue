@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { StarTrailsGL } from '../src/index'
+import { Blackhole } from '../src/index'
 </script>
 
 <template>
   <div class="playground">
-    <StarTrailsGL debug />
+    <Blackhole debug />
   </div>
 </template>
 

@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
   const isPlayground = mode === 'playground'
 
   return {
-    base: isPlayground ? '/star-trails-gl/' : './',
+    base: isPlayground ? '/blackhole/' : './',
     root: isPlayground ? 'playground' : '.',
     plugins: [
       vue(),
@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
     } : {
       lib: {
         entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
-        name: 'BgEffectsStarTrailsGL',
+        name: 'BgEffectsBlackhole',
         formats: ['es', 'umd'],
         fileName: (format) => `index.${format === 'es' ? 'js' : 'umd.cjs'}`,
       },
