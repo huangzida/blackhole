@@ -58,6 +58,7 @@ export class BlackholeEngine {
         uStarDensity: { value: this.config.starDensity },
         uTwinkleStrength: { value: this.config.twinkleStrength },
         uNoiseStrength: { value: this.config.noiseStrength },
+        uBrightness: { value: this.config.brightness },
         uAuroraStrength: { value: this.config.auroraStrength },
         uTemperatureGradient: { value: this.config.temperatureGradient },
         uDopplerEffect: { value: this.config.dopplerEffect },
@@ -144,6 +145,8 @@ export class BlackholeEngine {
       this.program.uniforms.uTwinkleStrength.value = this.config.twinkleStrength
     if (typeof this.config.noiseStrength === 'number')
       this.program.uniforms.uNoiseStrength.value = this.config.noiseStrength
+    if (typeof this.config.brightness === 'number')
+      this.program.uniforms.uBrightness.value = this.config.brightness
     if (typeof this.config.auroraStrength === 'number')
       this.program.uniforms.uAuroraStrength.value = this.config.auroraStrength
     if (typeof this.config.temperatureGradient === 'number')

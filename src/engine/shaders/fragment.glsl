@@ -16,6 +16,7 @@ uniform float uHaloIntensity;
 uniform float uStarDensity;
 uniform float uTwinkleStrength;
 uniform float uNoiseStrength;
+uniform float uBrightness;
 
 uniform float uAuroraStrength;
 uniform float uTemperatureGradient;
@@ -254,6 +255,8 @@ void main() {
     float grain = hash(vUv * 1000.0 + uTime) * 2.0 - 1.0;
     finalCol += grain * uFilmGrain * 0.1;
   }
+
+  finalCol *= uBrightness;
 
   fragColor = vec4(finalCol, 1.0);
 }

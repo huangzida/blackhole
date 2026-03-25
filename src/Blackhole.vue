@@ -59,6 +59,7 @@ const resolveEngineConfig = (source: BlackholeProps): BlackholeEngineConfig => (
   twinkleStrength: source.twinkleStrength ?? meta.defaultConfig.twinkleStrength,
   noiseStrength: source.noiseStrength ?? meta.defaultConfig.noiseStrength,
   maxFps: source.maxFps ?? meta.defaultConfig.maxFps,
+  brightness: source.brightness ?? meta.defaultConfig.brightness,
   auroraStrength: source.auroraStrength ?? meta.defaultConfig.auroraStrength,
   temperatureGradient: source.temperatureGradient ?? meta.defaultConfig.temperatureGradient,
   dopplerEffect: source.dopplerEffect ?? meta.defaultConfig.dopplerEffect,

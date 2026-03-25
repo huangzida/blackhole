@@ -19,6 +19,7 @@ export interface BlackholeProps {
   twinkleStrength?: number
   noiseStrength?: number
   maxFps?: number
+  brightness?: number
 
   auroraStrength?: number
   temperatureGradient?: number
@@ -61,6 +62,7 @@ export interface BlackholeEngineConfig {
   twinkleStrength: number
   noiseStrength: number
   maxFps: number
+  brightness: number
 
   auroraStrength: number
   temperatureGradient: number

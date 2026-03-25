@@ -28,6 +28,7 @@ export const meta: EffectMeta<BlackholeProps> = {
     twinkleStrength: 1.0,
     noiseStrength: 0.35,
     maxFps: 60,
+    brightness: 1.0,
     qualityMode: 'standard',
     auroraStrength: 0.5,
     temperatureGradient: 0.7,
@@ -66,6 +67,7 @@ export const meta: EffectMeta<BlackholeProps> = {
       result.starDensity = rand(0.2, 2.0)
       result.twinkleStrength = rand(0.0, 2.0)
       result.noiseStrength = rand(0.0, 1.0)
+      result.brightness = rand(0.5, 1.5)
       result.qualityMode = ['performance', 'standard', 'cinematic'][Math.floor(Math.random() * 3)] as any
       result.auroraStrength = rand(0.0, 1.0)
       result.temperatureGradient = rand(0.0, 1.0)

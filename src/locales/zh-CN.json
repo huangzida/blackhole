@@ -20,6 +20,7 @@
     "starDensity": "星点密度",
     "twinkleStrength": "闪烁强度",
     "noiseStrength": "湍流细节",
+    "brightness": "整体亮度",
     "maxFps": "最大帧率"
   }
 }

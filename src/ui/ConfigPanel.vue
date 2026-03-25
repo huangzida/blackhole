@@ -53,6 +53,7 @@ const haloIntensityLabel = computed(() => t('labels.haloIntensity'))
 const starDensityLabel = computed(() => t('labels.starDensity'))
 const twinkleLabel = computed(() => t('labels.twinkleStrength'))
 const noiseLabel = computed(() => t('labels.noiseStrength'))
+const brightnessLabel = computed(() => t('labels.brightness'))
 const maxFpsLabel = computed(() => t('labels.maxFps'))
 </script>
 
@@ -95,6 +96,13 @@ const maxFpsLabel = computed(() => t('labels.maxFps'))
           :min="15"
           :max="120"
           :step="1"
+        />
+        <Slider
+          v-model="config.brightness"
+          :label="brightnessLabel"
+          :min="0.2"
+          :max="2"
+          :step="0.05"
         />
       </template>
 
