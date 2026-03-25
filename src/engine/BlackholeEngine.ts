@@ -58,6 +58,24 @@ export class BlackholeEngine {
         uStarDensity: { value: this.config.starDensity },
         uTwinkleStrength: { value: this.config.twinkleStrength },
         uNoiseStrength: { value: this.config.noiseStrength },
+        uAuroraStrength: { value: this.config.auroraStrength },
+        uTemperatureGradient: { value: this.config.temperatureGradient },
+        uDopplerEffect: { value: this.config.dopplerEffect },
+        uPhotonSphereIntensity: { value: this.config.photonSphereIntensity },
+        uCoreDepthEffect: { value: this.config.coreDepthEffect },
+        uEinsteinRingStrength: { value: this.config.einsteinRingStrength },
+        uSecondaryImage: { value: this.config.secondaryImage },
+        uLensDetail: { value: this.config.lensDetail },
+        uAccretionFlowStrength: { value: this.config.accretionFlowStrength },
+        uAccretionFlowCount: { value: this.config.accretionFlowCount },
+        uJetIntensity: { value: this.config.jetIntensity },
+        uJetColor: { value: new Color(this.config.jetColor) },
+        uJetWidth: { value: this.config.jetWidth },
+        uBloomStrength: { value: this.config.bloomStrength },
+        uChromaticAberration: { value: this.config.chromaticAberration },
+        uVignetteStrength: { value: this.config.vignetteStrength },
+        uFilmGrain: { value: this.config.filmGrain },
+        uQualityMode: { value: this.config.qualityMode === 'cinematic' ? 2 : (this.config.qualityMode === 'standard' ? 1 : 0) },
       },
       transparent: true,
       depthTest: false,
@@ -126,6 +144,42 @@ export class BlackholeEngine {
       this.program.uniforms.uTwinkleStrength.value = this.config.twinkleStrength
     if (typeof this.config.noiseStrength === 'number')
       this.program.uniforms.uNoiseStrength.value = this.config.noiseStrength
+    if (typeof this.config.auroraStrength === 'number')
+      this.program.uniforms.uAuroraStrength.value = this.config.auroraStrength
+    if (typeof this.config.temperatureGradient === 'number')
+      this.program.uniforms.uTemperatureGradient.value = this.config.temperatureGradient
+    if (typeof this.config.dopplerEffect === 'number')
+      this.program.uniforms.uDopplerEffect.value = this.config.dopplerEffect
+    if (typeof this.config.photonSphereIntensity === 'number')
+      this.program.uniforms.uPhotonSphereIntensity.value = this.config.photonSphereIntensity
+    if (typeof this.config.coreDepthEffect === 'number')
+      this.program.uniforms.uCoreDepthEffect.value = this.config.coreDepthEffect
+    if (typeof this.config.einsteinRingStrength === 'number')
+      this.program.uniforms.uEinsteinRingStrength.value = this.config.einsteinRingStrength
+    if (typeof this.config.secondaryImage === 'number')
+      this.program.uniforms.uSecondaryImage.value = this.config.secondaryImage
+    if (typeof this.config.lensDetail === 'number')
+      this.program.uniforms.uLensDetail.value = this.config.lensDetail
+    if (typeof this.config.accretionFlowStrength === 'number')
+      this.program.uniforms.uAccretionFlowStrength.value = this.config.accretionFlowStrength
+    if (typeof this.config.accretionFlowCount === 'number')
+      this.program.uniforms.uAccretionFlowCount.value = this.config.accretionFlowCount
+    if (typeof this.config.jetIntensity === 'number')
+      this.program.uniforms.uJetIntensity.value = this.config.jetIntensity
+    if (typeof this.config.jetColor === 'string')
+      this.program.uniforms.uJetColor.value.set(this.config.jetColor)
+    if (typeof this.config.jetWidth === 'number')
+      this.program.uniforms.uJetWidth.value = this.config.jetWidth
+    if (typeof this.config.bloomStrength === 'number')
+      this.program.uniforms.uBloomStrength.value = this.config.bloomStrength
+    if (typeof this.config.chromaticAberration === 'number')
+      this.program.uniforms.uChromaticAberration.value = this.config.chromaticAberration
+    if (typeof this.config.vignetteStrength === 'number')
+      this.program.uniforms.uVignetteStrength.value = this.config.vignetteStrength
+    if (typeof this.config.filmGrain === 'number')
+      this.program.uniforms.uFilmGrain.value = this.config.filmGrain
+    if (this.config.qualityMode)
+      this.program.uniforms.uQualityMode.value = this.config.qualityMode === 'cinematic' ? 2 : (this.config.qualityMode === 'standard' ? 1 : 0)
   }
 
   pause() {
