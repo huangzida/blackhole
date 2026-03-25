@@ -28,6 +28,24 @@ export const meta: EffectMeta<BlackholeProps> = {
     twinkleStrength: 1.0,
     noiseStrength: 0.35,
     maxFps: 60,
+    qualityMode: 'standard',
+    auroraStrength: 0.5,
+    temperatureGradient: 0.7,
+    dopplerEffect: 0.3,
+    photonSphereIntensity: 0.8,
+    coreDepthEffect: 0.6,
+    einsteinRingStrength: 0.5,
+    secondaryImage: 0.3,
+    lensDetail: 2,
+    accretionFlowStrength: 0.5,
+    accretionFlowCount: 6,
+    jetIntensity: 1.0,
+    jetColor: '#4fc3f7',
+    jetWidth: 0.03,
+    bloomStrength: 0.5,
+    chromaticAberration: 0.005,
+    vignetteStrength: 0.3,
+    filmGrain: 0.1,
   },
   randomize: (current, tab?) => {
     const result = { ...current }
@@ -48,6 +66,24 @@ export const meta: EffectMeta<BlackholeProps> = {
       result.starDensity = rand(0.2, 2.0)
       result.twinkleStrength = rand(0.0, 2.0)
       result.noiseStrength = rand(0.0, 1.0)
+      result.qualityMode = ['performance', 'standard', 'cinematic'][Math.floor(Math.random() * 3)] as any
+      result.auroraStrength = rand(0.0, 1.0)
+      result.temperatureGradient = rand(0.0, 1.0)
+      result.dopplerEffect = rand(0.0, 0.5)
+      result.photonSphereIntensity = rand(0.0, 1.0)
+      result.coreDepthEffect = rand(0.0, 1.0)
+      result.einsteinRingStrength = rand(0.0, 1.0)
+      result.secondaryImage = rand(0.0, 0.5)
+      result.lensDetail = Math.floor(rand(1, 4))
+      result.accretionFlowStrength = rand(0.0, 1.0)
+      result.accretionFlowCount = Math.floor(rand(3, 12))
+      result.jetIntensity = rand(0.0, 2.0)
+      result.jetColor = palette[0]
+      result.jetWidth = rand(0.01, 0.08)
+      result.bloomStrength = rand(0.0, 1.0)
+      result.chromaticAberration = rand(0.0, 0.01)
+      result.vignetteStrength = rand(0.0, 0.5)
+      result.filmGrain = rand(0.0, 0.2)
       return result
     }
 
@@ -67,18 +103,41 @@ export const meta: EffectMeta<BlackholeProps> = {
       result.diskIntensity = rand(1.0, 3.0)
       result.diskTilt = rand(1.8, 4.8)
       result.noiseStrength = rand(0.0, 1.0)
+      result.auroraStrength = rand(0.0, 1.0)
+      result.temperatureGradient = rand(0.0, 1.0)
+      result.dopplerEffect = rand(0.0, 0.5)
       return result
     }
 
     if (tab === 'lens') {
       result.lensingStrength = rand(0.2, 1.8)
       result.haloIntensity = rand(0.1, 1.4)
+      result.einsteinRingStrength = rand(0.0, 1.0)
+      result.secondaryImage = rand(0.0, 0.5)
+      result.lensDetail = Math.floor(rand(1, 4))
       return result
     }
 
     if (tab === 'stars') {
       result.starDensity = rand(0.0, 2.0)
       result.twinkleStrength = rand(0.0, 2.0)
+      return result
+    }
+
+    if (tab === 'particles') {
+      result.accretionFlowStrength = rand(0.0, 1.0)
+      result.accretionFlowCount = Math.floor(rand(3, 12))
+      result.jetIntensity = rand(0.0, 2.0)
+      result.jetColor = palette[0]
+      result.jetWidth = rand(0.01, 0.08)
+      return result
+    }
+
+    if (tab === 'postfx') {
+      result.bloomStrength = rand(0.0, 1.0)
+      result.chromaticAberration = rand(0.0, 0.01)
+      result.vignetteStrength = rand(0.0, 0.5)
+      result.filmGrain = rand(0.0, 0.2)
       return result
     }
 
@@ -164,6 +223,42 @@ export const meta: EffectMeta<BlackholeProps> = {
         lensingStrength: 1.1,
         starDensity: 0.9,
         twinkleStrength: 1.4,
+      },
+    },
+    {
+      id: 'blackhole_cinematic_pro',
+      name: { en: 'Cinematic Pro', 'zh-CN': '电影增强版' },
+      config: {
+        qualityMode: 'cinematic',
+        jetIntensity: 1.2,
+        einsteinRingStrength: 0.7,
+        accretionFlowStrength: 0.6,
+        auroraStrength: 0.8,
+        bloomStrength: 0.6,
+        photonSphereIntensity: 0.9,
+      },
+    },
+    {
+      id: 'blackhole_relativistic',
+      name: { en: 'Relativistic', 'zh-CN': '相对论' },
+      config: {
+        qualityMode: 'cinematic',
+        jetIntensity: 1.8,
+        accretionFlowStrength: 0.9,
+        dopplerEffect: 0.7,
+        photonSphereIntensity: 1.0,
+        einsteinRingStrength: 0.9,
+      },
+    },
+    {
+      id: 'blackhole_aurora',
+      name: { en: 'Aurora', 'zh-CN': '极光黑洞' },
+      config: {
+        qualityMode: 'standard',
+        auroraStrength: 1.2,
+        temperatureGradient: 1.0,
+        color: '#00ff88',
+        jetColor: '#00ffcc',
       },
     },
   ],
